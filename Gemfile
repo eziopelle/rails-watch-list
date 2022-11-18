@@ -29,6 +29,7 @@ gem "jbuilder"
 
 gem "dotenv-rails", groups: [:development, :test]
 
+gem "cloudinary"
 
 #front-end gem
 gem "autoprefixer-rails"
