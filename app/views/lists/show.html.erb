@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, crop: :fill %>)">
   <div class="container">
     <h1> <%= @list.name %></h1>
     <p>Félicitation, c'est un très bon choix</p>
@@ -24,11 +24,20 @@
     <% end %>
   </div>
 
+  <h1>New Bookmark</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit "Submit review", class: "btn btn-success" %>
+  <% end %>
+
 </div>
 
-<h1>New Bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+  <div id="fusee">
+    <!-- Début fusée -->
+    <div id="rocket_dummy">
+      <div class="fire bottom"></div>
+      <div class="rocket_body"></div>
+    </div>
+    <!-- Fin fusée -->
+  </div>
